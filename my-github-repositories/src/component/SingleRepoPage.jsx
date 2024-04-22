@@ -7,7 +7,7 @@ function SingleRepoPage() {
     const { id } = useParams();
 
     return (
-        <Container mt={50} border borderRadius={10} maxW='2xl' bg='blue.600' centerContent>
+        <Container mt={[4, 8]} border borderRadius={10} maxW='2xl' bg='blue.600' centerContent>
             <Heading>Single Repository Details</Heading>
             <SingleRepo id={id} />
         </Container>

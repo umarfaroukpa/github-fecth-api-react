@@ -5,7 +5,7 @@ import { Box, Center, Container, Flex, Heading } from '@chakra-ui/react';
 
 function HomePage() {
     return (
-        <Flex pt={30} minWidth={'max-content'} direction={'column'} align={'Center'} justify={'Center'}>
+        <Flex pt={[4, 8]} minWidth={'max-content'} direction={'column'} align={'Center'} justify={'Center'}>
             <Container border borderRadius={15} maxW='2xl' bg='blue.600' centerContent>
                 <Box>
                 </Box>
