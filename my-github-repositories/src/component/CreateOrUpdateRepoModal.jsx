@@ -15,7 +15,7 @@ function CreateOrUpdateRepoModal({ isOpen, onClose, onSubmit, repo = null }) {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} position="absolute" top={0} right={0}>
+    <Modal isOpen={isOpen} onClose={onClose} position="absolute" top={0} right={60} >
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{repo ? 'Update Repository' : 'Create New Repository'}</ModalHeader>

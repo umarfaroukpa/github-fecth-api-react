@@ -34,7 +34,7 @@ const HomePageLink = () => (
 );
 
 const Footer = () => (
-  <Box position="relative" Bottom="0" textAlign={'Center'} Center="0" padding="1rem">
+  <Box position="relative" Bottom="0" textAlign={'Center'} color={'#fff'} Center="0" padding="1rem">
     <Link to="/">By Umar Farouk Ilyas &copy;2024</Link>
   </Box>
 

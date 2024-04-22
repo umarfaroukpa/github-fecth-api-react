@@ -80,7 +80,7 @@ function ReposList() {
           onChange={handleSearch}
         />
       </Stack>
-      <Flex direction="column">
+      <Flex direction="column" gap={2} color={'#fff'} _hover={'#C8A2C8'} >
         {filteredRepositories.map((repo) => (
           <Box key={repo.id} p={4} borderWidth="1px" borderRadius="md">
             <Link to={`/repos/${repo.id}`}>
@@ -104,4 +104,6 @@ function ReposList() {
 }
 
 export default ReposList;
+
+
 
