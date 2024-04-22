@@ -11,6 +11,7 @@ const theme = extendTheme({
     global: {
       body: {
         bg: '#C8A2C8',
+        overflow: 'hidden'
       },
     },
   },
