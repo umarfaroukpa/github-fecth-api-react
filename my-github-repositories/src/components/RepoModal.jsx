@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button, Input } from '@chakra-ui/react';
+import { useState } from 'react';
 
 function RepoModal({ isOpen, onClose, onSubmit, repo = null }) {
   const [name, setName] = useState(repo ? repo.name : '');

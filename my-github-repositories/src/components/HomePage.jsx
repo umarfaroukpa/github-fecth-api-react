@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ReposList from './ReposList';
 import { Box, Center, Container, Flex, Heading } from '@chakra-ui/react';
 

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { Box, Button, ButtonGroup, Flex, Input, Stack, Text, } from '@chakra-ui/react';
-import CreateOrUpdateRepoModal from './CreateOrUpdateRepoModal';
+import { useState, useEffect } from 'react';
+import { Search, Plus, ChevronLeft, ChevronRight } from 'lucide-react';
+import RepoCard from '../components/RepoCard';
+import RepoModal from '../components/RepoModal';
 
 function ReposList({ navigateToRepo }) {
   const [repositories, setRepositories] = useState([]);
@@ -21,11 +20,11 @@ function ReposList({ navigateToRepo }) {
         const response = await fetch(
           `https://api.github.com/users/umarfaroukpa/repos?page=${page}&per_page=${perPage}`
         );
-        
+
         if (!response.ok) {
           throw new Error('Failed to fetch repositories');
         }
-        
+
         const data = await response.json();
         setRepositories(data);
         setLoading(false);
@@ -82,7 +81,7 @@ function ReposList({ navigateToRepo }) {
             onChange={handleSearch}
           />
         </div>
-        
+
         <button
           onClick={() => setIsModalOpen(true)}
           className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md transition-colors ml-4"
@@ -109,9 +108,9 @@ function ReposList({ navigateToRepo }) {
               </div>
             ) : (
               filteredRepositories.map((repo) => (
-                <RepoCard 
-                  key={repo.id} 
-                  repo={repo} 
+                <RepoCard
+                  key={repo.id}
+                  repo={repo}
                   onClick={() => navigateToRepo(repo.id)}
                   onDelete={() => handleDelete(repo.id)}
                 />
@@ -124,20 +123,19 @@ function ReposList({ navigateToRepo }) {
               <button
                 onClick={prevPage}
                 disabled={page === 1}
-                className={`flex items-center gap-1 px-4 py-2 rounded-md ${
-                  page === 1
-                    ? 'bg-purple-700 text-purple-300 cursor-not-allowed'
-                    : 'bg-purple-600 hover:bg-purple-700 text-white'
-                } transition-colors`}
+                className={`flex items-center gap-1 px-4 py-2 rounded-md ${page === 1
+                  ? 'bg-purple-700 text-purple-300 cursor-not-allowed'
+                  : 'bg-purple-600 hover:bg-purple-700 text-white'
+                  } transition-colors`}
               >
                 <ChevronLeft size={18} />
                 <span>Previous</span>
               </button>
-              
+
               <span className="flex items-center px-4 py-2 bg-purple-700 text-white rounded-md">
                 Page {page}
               </span>
-              
+
               <button
                 onClick={nextPage}
                 className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md transition-colors"
