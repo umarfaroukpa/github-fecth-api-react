@@ -33,12 +33,13 @@ const HomePageLink = () => (
   </Box>
 );
 
-const Footer = () => (
-  <Box position="relative" Bottom="0" textAlign={'Center'} color={'#fff'} Center="0" padding="1rem">
-    <Link to="/">By Umar Farouk Ilyas &copy;2024</Link>
-  </Box>
-
-);
+function Footer() {
+  return (
+    <footer className="bg-purple-800 text-white p-4 text-center">
+      <p>By Umar Farouk Ilyas &copy; {new Date().getFullYear()}</p>
+    </footer>
+  );
+}
 
 
 export default App;

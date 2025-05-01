@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function NotFound() {
     return (
-        <Container pt={70}>
+        <Container pt={[4, 8]}>
             <Heading>404 - Not Found</Heading>
             <p>The page you are looking for does not exist.</p>
             <Link to="/">
